@@ -1,10 +1,11 @@
+'use client'
 import React from 'react'
+import AddToCart from './AddToCart'
 
 const ProductCard = () => {
   return (
-    <div>
-      <button onClick={() => console.log("button clicked haha!!!")
-      }></button>
+    <div >
+     <AddToCart/>
     </div>
   )
 }

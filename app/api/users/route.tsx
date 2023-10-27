@@ -8,7 +8,6 @@ export function GET(request: NextRequest) {
         {id : 4 , name : 'Muluken'},
     ])
 }
-
 export async function POST(request: NextRequest) {
     const body = await request.json()
     if (!body.name)

@@ -32,3 +32,13 @@ export async function PUT(
 }
 
 
+export function DELETE(request: NextRequest ,  { params }: { params: { id: number } }) {
+    // fetch the user from the db
+    // if not found return 404
+    if (params.id > 10)
+        return NextResponse.json({error : 'User Not Found!'})
+    // delete the user
+    // return 200 i.e status ok
+    return NextResponse.json({})
+}
+

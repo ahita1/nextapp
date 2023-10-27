@@ -10,3 +10,5 @@ export function GET(
     return NextResponse.json({id : 16912 , name : 'Ahita'})
     
 }
+
+

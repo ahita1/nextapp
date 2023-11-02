@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 import schema from '../schema'
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client/edge'
+
+
 
 export function GET(
     request: NextRequest,

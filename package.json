@@ -30,6 +30,8 @@
     "prisma": "^5.5.2"
   },
   "prisma": {
-    "binaryTargets": ["native"]
+    "binaryTargets": [
+      "native"
+    ]
   }
 }

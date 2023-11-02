@@ -1,19 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
-import  prisma  from "@/prisma/client"; // Corrected import statement
+import { prisma } from '@/prisma/client'
+    
+    
+    
+// export async function GET(request: NextRequest) {
+//     const users =await prisma.user.findMany()
+//     // console.log("next response", NextResponse.json(users));
+//     // console.log(users);
+//     return NextResponse.json(users);
+// }
 
 export async function GET(request: NextRequest) {
-    const users = await prisma.user.findMany();
-    console.log("next response", NextResponse.json(users));
+    console.log('heyy nigga haha');
     
+    const users = await prisma.user.findMany(); // Adding 'await' here
     return NextResponse.json(users);
 }
-// [
-//     {id : 1 , name : 'Ahita'},
-//     {id : 1 , name : 'Solomon'},
-//     {id : 1 , name : 'Andi'},
-//     {id : 1 , name : 'Mule'}
-// ]
+
 
 export async function POST(request: NextRequest) {
     const body = await request.json();

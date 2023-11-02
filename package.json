@@ -28,5 +28,8 @@
   "devDependencies": {
     "daisyui": "^3.9.3",
     "prisma": "^5.5.2"
+  },
+  "prisma": {
+    "binaryTargets": ["native"]
   }
 }

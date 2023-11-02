@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
-import { prisma } from '@/prisma/client'
+// import { prisma } from '@/prisma/client'
+import { PrismaClient } from "@prisma/client";
+
     
     
     
@@ -10,13 +12,14 @@ import { prisma } from '@/prisma/client'
 //     // console.log(users);
 //     return NextResponse.json(users);
 // }
-
-export async function GET(request: NextRequest) {
+const prisma = new PrismaClient();
+export async  function GET(request: NextRequest) {
     console.log('heyy nigga haha');
-    
-    const users = await prisma.user.findMany(); // Adding 'await' here
+    const users = await prisma.user.findMany()
+    // console.log(NextResponse.json(users));
     return NextResponse.json(users);
 }
+
 
 
 export async function POST(request: NextRequest) {
@@ -26,3 +29,5 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(validation.error.errors, { status: 400 });
     return NextResponse.json({ id: 1, name: body.name }, { status: 201 });
 }
+
+

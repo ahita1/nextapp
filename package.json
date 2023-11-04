@@ -30,8 +30,6 @@
     "prisma": "^5.5.2"
   },
   "prisma": {
-    "binaryTargets": [
-      "native"
-    ]
+    "enginesVersion": "3.4.2"
   }
 }

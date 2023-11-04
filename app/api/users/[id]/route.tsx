@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import schema from '../schema'
 import { PrismaClient } from '@prisma/client/edge'
 
-
+const prisma = new PrismaClient()
 
 export function GET(
     request: NextRequest,

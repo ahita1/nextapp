@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
-// import { prisma } from '@/prisma/client'
-import { PrismaClient } from '@prisma/client/edge'
+import { prisma } from '@/prisma/client'
 
-    
     
     
 // export async function GET(request: NextRequest) {
@@ -12,14 +10,14 @@ import { PrismaClient } from '@prisma/client/edge'
 //     // console.log(users);
 //     return NextResponse.json(users);
 // }
-const prisma = new PrismaClient()
+
 export async  function GET(request: NextRequest) {
     console.log('heyy nigga haha');
     const users = await prisma.user.findMany()
-    // console.log(NextResponse.json(users));
+    if (!users)
+        return NextResponse.json({error : "an error occurred haha"} , {status : 500})
     return NextResponse.json(users);
 }
-
 
 
 export async function POST(request: NextRequest) {

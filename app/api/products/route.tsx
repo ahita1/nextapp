@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   const newProducts = await prisma.products.create({
     data: {
       name: body.proName,
-      price: body.price
+      price: body.price 
     }
   });
   return NextResponse.json(newProducts, { status: 201 });

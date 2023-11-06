@@ -6,14 +6,16 @@ import { prisma } from '@/prisma/client'
 export async function GET(
     request: NextRequest,
     { params }: { params: { id: string } }) {
-    const user =await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
         where : {id : parseInt(params.id)}
     })
     if (!user)
         return NextResponse.json({ error: 'User not Found!' }, { status: 404 })
     return NextResponse.json(user)
-    
 }
+
+
+
 // update the user  haha
 export async function PUT(
     request: NextRequest,
@@ -36,7 +38,6 @@ export async function PUT(
     return NextResponse.json({id : 1 , name : body.name})
     
 }
-
 // delete the user haha
 export function DELETE(request: NextRequest ,  { params }: { params: { id: number } }) {
     // fetch the user from the db
@@ -47,4 +48,3 @@ export function DELETE(request: NextRequest ,  { params }: { params: { id: numbe
     // return 200 i.e status ok
     return NextResponse.json({})
 }
-

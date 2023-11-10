@@ -7,7 +7,9 @@ interface Props{
 
 const AuthProvider = ({children} : Props) => {
   return (
- 
+      <SessionProvider>
+          {children}
+    </SessionProvider>
   )
 }
 

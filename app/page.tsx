@@ -13,13 +13,16 @@ export default async function Home() {
       <h1>Hey {session && <span>{ session.user!.name}</span> }</h1>
       <Link href="/users">Users</Link>
       <ProductCard />
+      <main className='relative h-screen mt-5'>
       <Image
         src="https://bit.ly/react-cover" alt="reaact_images"
         fill
         className="object-cover"
         sizes="(max-width : 480px) 100vw , (max-width : 768px) 50vw ,33vw "
         quality={100}
+        priority
       />
+     </main>
     </>
   )
 }

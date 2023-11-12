@@ -4,13 +4,15 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function POST() {
-    await resend.emails.send({
-        from: 'ahitafani833@gmail.com',
-        to: "amsalusolomon12@gmail.com",
-        subject: '...',
+export async function GET() {
+        await resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: "nigussieahunem@gmail.com",
+        subject: 'My name is Ahunem Nigussie, Im a fullstack developer but specializing on Front-end website developments with React and Vue.js frameworks haha',
         react : <WelcomeTemplate name="Ahita haha"/>
     })
 
-    return NextResponse
+    return NextResponse.json({
+        status : "ok"
+    })
 }
